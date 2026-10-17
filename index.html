@@ -31,10 +31,11 @@
   --bad:#b83a3a; --bad-bg:rgba(184,58,58,.12);
   --lv0:#b4533f; --lv1:#b98a2a; --lv2:#5f8f6a; --lv3:#2f7a8c; --lv4:#7a4fb0;
   --scrim:rgba(30,25,20,.38);
+  --on-lv:#fff;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bg:#14161b;
     --bg1:rgba(52,82,120,.55);
     --bg2:rgba(120,58,86,.42);
@@ -55,8 +56,33 @@
     --bad:#f08a8a; --bad-bg:rgba(240,138,138,.14);
     --lv0:#ec8a74; --lv1:#e3bd62; --lv2:#8fca9a; --lv3:#6cc3d6; --lv4:#b997ec;
     --scrim:rgba(0,0,0,.55);
+    --on-lv:#15131a;
     color-scheme:dark;
   }
+}
+:root[data-theme="dark"]{
+  --bg:#14161b;
+  --bg1:rgba(52,82,120,.55);
+  --bg2:rgba(120,58,86,.42);
+  --bg3:rgba(40,100,80,.45);
+  --text:#ece7df;
+  --muted:#aaa196;
+  --glass:rgba(30,32,40,.6);
+  --glass-strong:rgba(32,34,43,.9);
+  --glass-border:rgba(255,255,255,.10);
+  --line:rgba(255,255,255,.12);
+  --shadow:0 10px 30px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.25);
+  --accent:#e9a25a;
+  --accent-soft:rgba(233,162,90,.16);
+  --on-accent:#1d1408;
+  --pali:#f0cf9e;
+  --pali-bg:rgba(80,58,30,.35);
+  --ok:#6fd291; --ok-bg:rgba(111,210,145,.15);
+  --bad:#f08a8a; --bad-bg:rgba(240,138,138,.14);
+  --lv0:#ec8a74; --lv1:#e3bd62; --lv2:#8fca9a; --lv3:#6cc3d6; --lv4:#b997ec;
+  --scrim:rgba(0,0,0,.55);
+  --on-lv:#15131a;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{max-width:100%;overflow-x:hidden}
@@ -161,8 +187,7 @@ input[type=range]{accent-color:var(--accent)}
 .w5 .k{font-size:.78rem;font-weight:600;color:var(--accent)}
 
 /* journey */
-.lv-pill{display:inline-block;font-size:.75rem;font-weight:600;padding:.08rem .6rem;border-radius:999px;color:#fff}
-@media (prefers-color-scheme: dark){ .lv-pill{color:#15131a} }
+.lv-pill{display:inline-block;font-size:.75rem;font-weight:600;padding:.08rem .6rem;border-radius:999px;color:var(--on-lv)}
 .timeline{list-style:none;margin:0;padding:0 0 0 26px;position:relative}
 .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line);border-radius:2px}
 .timeline li{position:relative;margin-bottom:14px}
